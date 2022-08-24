@@ -20,6 +20,7 @@ function App() {
 	useEffect(() => {
 		// Fetch the data when componentDidMount
 		fetchData();
+
 	}, []);
 
 	// FONCTIONS
@@ -33,7 +34,9 @@ function App() {
 						...response.data[key], id: key
 					});
 				};
-				setTasks(newTasks);
+				// Sort task - shows not done tasks first
+				const sortedTasks = [...newTasks].sort((a, b) => Number(a.done) - Number(b.done));
+				setTasks(sortedTasks);
 		})
 		.catch(error => {
 			console.log(error)
@@ -101,12 +104,13 @@ function App() {
 		// Change done status for its oposite
 		checkedTask[index].done = !tasks[index].done;
 		// if (checkedTask.done === true { filter: a la fin })
-
 		setTasks(checkedTask);
 
 		// Update the status in database
 		axios.put('tasks/' + tasks[index].id + '.json', tasks[index])
 			.then(response => {
+				const sortedTasks = [...checkedTask].sort((a, b) => Number(a.done) - Number(b.done));
+				setTasks(sortedTasks);
 				console.log(response);
 			})
 			.catch(error => {
