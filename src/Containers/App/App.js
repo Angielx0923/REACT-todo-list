@@ -39,7 +39,6 @@ function App() {
 			console.log(error)
 		});
 	}
-
 	// Detect changes in the input
 	const detectTextHandler = e => {
 		setNewTasks(e.target.value);
@@ -53,7 +52,8 @@ function App() {
 			content: newTasks,
 			done: false
 		}
-		setTasks([...tasks, newTask]);
+
+		setTasks([newTask, ...tasks]);
 		setNewTasks('');
 
 		axios.post('tasks.json', newTask)
@@ -100,6 +100,8 @@ function App() {
 		const checkedTask = [...tasks];
 		// Change done status for its oposite
 		checkedTask[index].done = !tasks[index].done;
+		// if (checkedTask.done === true { filter: a la fin })
+
 		setTasks(checkedTask);
 
 		// Update the status in database
@@ -111,6 +113,7 @@ function App() {
 				console.log(error);
 			});
 	}
+	
 
 	let input = (
 		<Form 
