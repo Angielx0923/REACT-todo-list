@@ -1,10 +1,5 @@
-.add {
-	background-color: #dbe2ef;
-	padding: 15px 30px;
-	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-	margin-bottom: 30px;
-	border-radius: 5px;
+.add {	
+	margin: auto 1rem 1.3rem 1rem;
 }
 
 .add form {
@@ -14,9 +9,12 @@
 
 .add input {
 	border: 1px solid white;
-	border-radius: 500px;
+	border-radius: 2rem;
 	padding: 10px 10px 10px 20px;
 	width: 100%;
+	box-shadow: 0px 0px 59px -3px rgb(0 0 0 / 47%);
+    -webkit-box-shadow: 0px 3px 30px -3px rgb(0 0 0 / 18%);
+    -moz-box-shadow: 0px 0px 59px -3px rgba(0,0,0,0.47);
 	font-size: 1rem;
 	outline: none;
 	color: #314e52;
@@ -26,13 +24,13 @@
 .add button {
 	background: -webkit-radial-gradient(bottom left, #ffc73c, salmon);
 	color: white;
-	padding: 10px 15px;
+	padding: 9px 15px;
 	border: 0;
 	border-radius: 50%;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	font-size: 1em;
+	font-size: 1.3em;
 	font-weight: bold;
 	margin-left: 15px;
 }
@@ -40,3 +38,4 @@
 .add button svg {
 	margin-right: 5px;
 }
+
